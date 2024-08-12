@@ -1,0 +1,24 @@
+{% load static %}
+    <!-- :::::::::::::::: area :::::::::::::::::: -->
+    <div class="container">
+        <div class="logos">
+            <div class="logos_slider">
+                <img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo2.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo2.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo2.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo2.png' %}" alt="">
+                <img src="{% static 'flyshopbd/assets/image/logo2.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    {% block js_file %}
+        <!-- :::::::::::::::: area :::::::::::::::::: -->
+        <script src="{% static 'flyshopbd/assets/js/custom.js' %}"></script>
+        <script>
+            var copy = qs('.logos_slider').cloneNode(true);
+            qs('.logos').appendChild(copy);
+        </script>
+    {% endblock js_file %}

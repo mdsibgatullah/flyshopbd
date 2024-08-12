@@ -1,0 +1,110 @@
+.c_address{
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    width: 60%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+
+    .cAddress_data{
+        box-shadow: 1px 1px 3px #737373;
+        padding: 10px;
+        border-radius: 5px;
+        height: 400px;
+        overflow-y: scroll;
+        @include scrolls();
+        background-color: var(--secondary-color);
+        
+        .close_cAddress {  
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            i{
+                color: var(--danger-color);
+                font-size: 30px;
+            }
+        }
+        h4{
+            margin-bottom: 5px;
+        }
+        // form{
+            ul{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                gap: 5px;
+                li{
+                    label{
+                        color: var(--primary-color);
+                        font-weight: var(--font-medium);
+                        cursor: pointer;
+                        span{
+                            color: var(--danger-color);
+                        }
+                    }
+                    input,select{
+                        border: 1px solid #c2c0c0b9;
+                        width: 100%;
+                        padding: 8px 5px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        margin: 3px 0 5px;
+                        font-size: 16px;
+                        outline: none;
+                    }
+                    input[type="radio"]{
+                        width: auto;
+                    }
+                }
+            } 
+        // }
+        .submit{
+            text-align: right;
+            margin-bottom: 5px;
+            label{
+                padding: 8px 18px;
+                border: 1px solid #b1b1b1;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.5s;
+                background-color: var(--primary-color);
+                color: var(--secondary-color);
+                font-weight: var(--font-semi-bold);
+                &:hover{
+                    color: var(--primary-color);
+                    background-color: var(--secondary-color);
+                }
+            }
+        }
+    }
+    
+}
+.c_address.active{
+    left: 50%;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+@media screen and (max-width: 576px) {
+    .c_address{
+        width: 96%;
+        // .cAddress_data{
+        //     ul{
+        //         grid-template-columns: 1fr;
+        //     }
+        // }
+    }
+}
+@media screen and (max-width: 425px) {
+    .c_address{
+        .cAddress_data{
+            ul{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

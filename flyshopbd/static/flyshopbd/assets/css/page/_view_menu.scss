@@ -1,0 +1,154 @@
+// __________________ View Menu Area Start ______________________
+.view_menu{
+    margin: 2px;
+    display: flex;
+    gap: 2px;
+    .view_product{
+        width: 55px;
+        text-align: center;
+        background-color: var(--secondary-color);
+        padding: 10px 5px;
+        height: calc(100vh - 61px);
+        @include radius(5px, --body-color-light);
+        position: relative;
+        ul{
+            .dropdown{
+                i{
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        right: 0px;
+                        bottom: 0px;
+                        // border-top: 7px solid transparent;
+                        // border-left: 7px solid transparent;
+                        border-left: 7px solid transparent;
+                        border-bottom: 7px solid var(--primary-color);
+                    }
+                }
+                &:hover ul{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            li{
+                margin-bottom: 10px;
+                // &:hover ul{
+                //     opacity: 1;
+                //     visibility: visible;
+                // }
+                i{
+                    @include icon(35px, 35px, 35px);
+                }
+                ul{
+                    position: absolute;
+                    width: 230px;
+                    height: calc(100vh - 61px);
+                    overflow-y: scroll;
+                    left: 55px;
+                    top: 0;
+                    background-color: var(--secondary-color);
+
+                    @include radius(5px, var(--body-color-light));
+                    @include scrolls();
+                    z-index: var(--z-1);
+
+                    opacity: 0;
+                    visibility: hidden;
+                    li{
+                        font-weight: var(--font-medium);
+                        padding: 5px 10px 5px 20px;
+                        margin-bottom: 3px;
+                        text-align: left;
+                        cursor: pointer;
+                        &:hover{
+                            @include radius(5px, var(--body-color-light));
+                        }
+                    }
+                    .cetagory_type{
+                        padding: 5px 10px;
+                        border-bottom: 1px solid var(--body-color);
+                        &:hover{
+                            box-shadow: 0 0 0 transparent;
+                        }
+                        h5{
+                            font-weight: var(--font-normal);
+                            color: var(--primary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // ____ main Frame _________
+    .main_frame{
+        width: calc(100% - 55px);
+        .all_cetagory{
+            width: 100%;
+            height: 45px;
+            padding: 5px 10px;
+            background-color: var(--secondary-color);
+            @include radius(5px, transparent);
+            @include flex(center, flex-start, 8px);
+            @include scrolls();
+            overflow-x: scroll;
+            li+li{
+                padding: 6px 15px;
+                cursor: pointer;
+                color: var(--primary-color);
+                font-family: var(--family-primary);
+                @include radius(5px, var(--body-color));
+                flex-shrink: 0;
+                &:hover{
+                    @include radius(5px, var(--body-color-light));
+                }
+            }
+            .show_catagory{
+                display: none;
+            }
+        }
+        // _______ All Section ______________
+        .sections{
+            margin-top: 3px;
+            height: calc(100vh - 110px);
+            border-radius: 5px;
+            overflow-y: scroll;
+            @include scrolls();
+            // ____________/ Main_____________
+        }
+    }
+}
+// __________________ View Menu Area End _______________________
+
+// ______ Responsive max-width _______________________
+@media screen and (max-width: 425px) {
+    // view menu -------------
+    .view_menu{
+        position: relative;
+        .view_product{
+            position: absolute;
+            left: -50%;
+            opacity: 0;
+            transition: .5s;
+        }
+        .main_frame{
+            width: 100%;
+            .all_cetagory{
+                .show_catagory{
+                    display: block;
+                    i{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    .active{
+        .view_product{
+            position: absolute;
+            opacity: 1;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}

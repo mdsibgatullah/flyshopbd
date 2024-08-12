@@ -1,0 +1,31 @@
+{% load static %}
+<header>
+    <div>
+        <nav>
+            <div class="nav_logo"><a href="{% url 'home' %}"><img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt="Logo"></a></div>
+            <div class="search">
+                <form action="#">
+                    <div class="search_bar">
+                        <input type="text" placeholder="Search for Products">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- suggestion ______________ -->
+                        {% comment %} <ul class="suggestion_bar">
+                            <li><img src="{% static 'flyshopbd/assets/image/product.png' %}" alt="Product"> <p>Product</p></li>
+                        </ul> {% endcomment %}
+                    </div>
+                </form>
+            </div>
+            <!-- tab bar ______________ -->
+            <div class="tab_bar">
+                <ul class="shopping">
+                    <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+                    <li class="card_add">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <b class="card_count">0</b>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

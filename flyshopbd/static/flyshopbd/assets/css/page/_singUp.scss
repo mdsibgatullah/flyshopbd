@@ -1,0 +1,80 @@
+.sing{
+    &::after{
+        position: fixed;
+        content: '';
+        width: 100%;
+        height: 100%;
+        transform: rotate(60deg);
+        background-image: linear-gradient(60deg,var(--primary-color),var(--secondary-color),var(--danger-color));
+        background-color: #303030;
+    }
+    .c_address {
+        visibility: visible;
+        opacity: 1;
+        left: 50%;
+        .logo{
+            text-align: center;
+        }
+        .social_iocn{
+            margin: 10px 0;
+            @include flex(center,center,10px);
+            i{
+                @include icon(40px,40px,40px);
+                font-size: 30px;
+                background-color: var(--secondary-color);
+            }
+        }
+        .cAddress_data{
+            height: auto;
+            padding: 20px;
+            max-width: 350px;
+            margin: 0 auto;
+            // box-shadow: 1px 2px 4px gray;
+            ul{
+                grid-template-columns: 1fr;
+                li{
+                    input{
+                        margin: 0;
+                        transition: .5s;
+                        font-size: 15px;
+                    }
+                    &:last-child{
+                        @include flex(center,space-between, 5px);
+                        cursor: pointer;
+                        transition: .5s;
+                        small{
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .eye{
+                        position: relative;
+                        .show_pass{
+                            position: absolute;
+                            right: 5px;
+                            top: 50%;
+                            transform: translate(0,-50%);
+                            i{
+                                @include icon(23px, 23px, 23px);
+                                font-size: 16px;
+                                background-color: var(--primary-color);
+                                color: var(--secondary-color);
+                                &:hover{
+                                    background-color: var(--secondary-color);
+                                    color: var(--primary-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .submit{
+            margin-top: 10px;
+            input{
+                background-color: var(--secondary-color);
+            }
+        }
+    }
+}

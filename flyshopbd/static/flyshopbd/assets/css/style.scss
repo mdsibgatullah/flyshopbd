@@ -1,0 +1,27 @@
+// -- base --
+@import "./base/mixin";
+@import "./base/var";
+@import "./base/typo";
+
+// --- subPage / Section ---
+
+@import "./page/header.scss";
+@import "./page/view_menu";
+@import "./page/allProduct";
+@import "./page/addProduct";
+@import "./page/customerAddress";
+@import "./page/checkOut";
+@import "./page/productArea";
+@import "./page/singUp";
+@import "./page/footer";
+@import "./page/slider";
+@import "./page/logo_slide";
+@import "./page/support";
+@import "./page/subscribe";
+@import "./page/comment";
+
+// ------- Page -------
+@import "./page/singleProduct";
+@import "./page/profile";
+@import "./page/policy";
+@import "./page/contact";

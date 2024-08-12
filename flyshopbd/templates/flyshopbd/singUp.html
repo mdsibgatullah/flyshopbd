@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>SingUP | Page</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="sing">
+        <div class="c_address">
+            <div class="cAddress_data">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt="logo">
+                    </a>
+                </div>
+                <ul class="social_iocn">
+                    <li><i class="fa-brands fa-google"></i></li>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-github"></i></li>
+                </ul>
+                <form action="#" method="post">
+                    <ul>
+                        <li>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter Your Name" required>
+                        </li>
+                        <li>
+                            <label for="email">G-mail or Phone</label>
+                            <input type="email" id="email" placeholder="Enter Your Email / Phone">
+                        </li>
+                        <li>
+                            <label for="password">Password</label>
+                            <div class="eye">
+                                <input type="password" id="password" placeholder="Password">
+                                <div class="show_pass">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <small>Forget Password</small>
+                            <small><a href="login.html">Login</a></small>
+                        </li>
+                    </ul>
+                    <div class="submit">
+                        <button type="submit">SingUp</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

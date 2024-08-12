@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>Contact | Page</title>
+{% endblock title %}
+
+{% block content %}
+    <!-- :::::::::::: Header Area Start ::::::::::::: -->
+     {% include "flyshopbd/header.html" %}
+    <!-- :::::::::::: Header Area End ::::::::::::: -->
+    <!-- ::::: card added product ::::: -->
+     {% include "flyshopbd/add-product.html" %}
+    <!-- ::::: card added product end ::::: -->
+
+    <!-- ::::: customer address  ::::: -->
+     {% include "flyshopbd/checkout.html" %}
+    <!-- ::::: customer end ::::: -->
+
+    <!-- ::::: CheckOut ::::: -->
+    {% include "flyshopbd/checkout.html" %}
+    <!-- ::::::::::::: CheckOut End ::::::::::::: -->
+
+    <!--::::: overlay::::: -->
+    {% include "flyshopbd/overlay.html" %}
+    <!--::::: overlay end::::: -->
+    
+    <div class="profile">
+        <div class="user_profile contact_area">
+            <!-- :::::::::::: Contact form Start ::::::::::::: -->
+            <div class="contact_form">
+                <div class="c_address active">
+                    <div class="cAddress_data">
+                        <form action="#" method="post">
+                            <ul>
+                                <li>
+                                    <label for="nameC">Name<span>*</span></label>
+                                    <input type="text" id="nameC" name="nameC" placeholder="Enter Your Name" required>
+                                </li>
+                                <!-- <li>
+                                    <label for="phoneC">Phone</label>
+                                    <input type="tel" id="phoneC" name="phoneC" placeholder="Phone Optional" required>
+                                </li> -->
+                                <li>
+                                    <label for="emailC">Email<span>*</span></label>
+                                    <input type="email" id="emailC" name="emailC" placeholder="Enter Your Email" required>
+                                </li>
+                                <li>
+                                    <label for="massageC">Massage<span>*</span></label>
+                                    <textarea id="massageC" id="massage" name="massage" rows="8" placeholder="Message"></textarea>
+                                </li>
+                                <li class="submit">
+                                    <ol>
+                                        <li><a href="index.html"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="index.html"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="index.html"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="index.html"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="index.html"><i class="fa-brands fa-skype"></i></a></li>
+                                    </ol>
+                                    <input type="submit" value="Send">
+                                </li>
+                            </ul>
+                        </form>
+                        
+                    </div>
+                </div>
+                <style>
+                    ._10b4::-webkit-scrollbar {
+                        width: 0 !important;
+                        height: 0 !important;
+                    }
+                </style>
+                <aside>
+                    <iframe style="height: 500px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFlyShopBd.Fb&tabs=timeline&small_header=false&width=340&min-height=100%&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"></iframe>
+                </aside>
+            </div>
+            <!-- :::::::::::: Contact form End ::::::::::::: -->
+        </div>
+    </div>
+
+    {% comment %} {% include "flyshopbd/footer.html" %} {% endcomment %}
+{% endblock content %}

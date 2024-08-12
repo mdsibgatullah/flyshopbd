@@ -1,0 +1,40 @@
+@mixin flex($align,$justify,$gap){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+@mixin radius($px,$color){
+    border-radius: $px;
+    box-shadow: 0 0 4px $color;
+    transition: .5s;
+}
+@mixin scrolls{
+    &::-webkit-scrollbar{
+        width: 2px;
+        height: 2px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: var(--primary-color);
+    }
+}
+@mixin icon($width,$height,$line){
+    min-width: $width;
+    height: $height;
+    line-height: $line !important;
+}
+@mixin clamp($line){
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@mixin gridLi($columns){
+    display: grid;
+    grid-template-columns: $columns;
+    margin-bottom: 8px;
+    background-color: #ffffff3f;
+    box-shadow: 0 0 3px 1px #ffffff;
+    padding: 5px 8px;
+    border-radius: 3px;
+}

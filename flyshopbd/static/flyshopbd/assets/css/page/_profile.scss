@@ -1,0 +1,429 @@
+// _______________ Profile Start ______________
+.profile{
+    .profile_menu{
+        margin-top: 3px;
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--secondary-color);
+            height: 55px;
+            overflow: hidden;
+            border-radius: 5px;
+            li{
+                border-radius: 3px;
+                border: 1px solid var(--body-color);
+                transition: .5s;
+                cursor: pointer;
+                &:hover{
+                    box-shadow: 0 2px 4px gray;
+                }
+                &:last-child{
+                    color: var(--danger-color);
+                    border: 1px solid var(--body-color);
+                    padding: 5px 10px;
+                    &:hover{
+                        box-shadow: 0 2px 4px gray;
+                    }
+                }
+                p{
+                    font-size: 14px;
+                    font-weight: var(--font-medium);
+                    padding: 5px 10px;
+                }
+                span{
+                    display: none;
+                }
+            }
+            li.active{
+                box-shadow: 0 2px 3px gray;
+                background-color: var(--primary-color);
+                background: linear-gradient(64deg, #0c81ff, #94d2ff);
+                color: var(--secondary-color);
+                span i{
+                    color: var(--secondary-color);
+                }
+            }
+        }
+    }
+    // User Profile ___________
+    .user_profile{
+        width: 100%;
+        height: calc(100vh - 117px);
+        @include flex(center,center,5px);
+        overflow-y: scroll;
+        @include scrolls();
+
+        background: linear-gradient(64deg, #0c81ff, #D0DBE3, #ffffff88);
+        margin-top: 3px;
+        // Profile head _______
+        .profile_head{
+            height: calc(100% - 120px);
+            margin: 30px 10px;
+            @include flex(center,center, 35px);
+            .profile_img {
+                width: 180px;
+                height: 220px;
+                border-radius: 5px;
+                box-shadow: 0 0 4px 1px var(--text-color);
+                overflow: hidden;
+                position: relative;
+                &:hover{
+                    .profileImg_edit{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                img{
+                    width: 180px;
+                    height: 220px;
+                }
+                .profileImg_edit{
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: .5s;
+                    i{
+                        background-color: var(--secondary-color);
+                    }
+                }
+            }
+            .profileText_area{
+                position: relative;
+                display: flex;
+                gap: 10px;
+                ul{
+                    .profile_edit{
+                        position: absolute;
+                        bottom: 95%;
+                        left: 90%;
+                        // z-index: 1;
+                        .openProfile_edit{
+                            display: block;
+                        }
+                        .closeProfile_edit{
+                            display: none;
+                        }
+                        i{
+                            background-color: var(--primary-color);
+                            color: var(--secondary-color);
+                        }
+                    }
+                    li{
+                        // @include flex(center,flex-start, 10px);
+                        display: grid;
+                        grid-template-columns: 2fr 1fr 5fr;
+                        gap: 5px;
+                        margin-bottom: 10px;
+                        p{
+                            color: var(--primary-color);
+                            font-weight: var(--font-medium);
+                        }
+                    }
+                }
+                .profileContent_edit{
+                    display: none;
+                }
+            }
+            .profileText_area.active{
+                ul{
+                    .profile_edit{
+                        .openProfile_edit{
+                            display: none;
+                        }
+                        .closeProfile_edit{
+                            display: block;
+                        }
+                        i{
+                            color: var(--danger-color);
+                            background-color: var(--secondary-color);
+                            font-size: 25px;
+                        }
+                    }
+                    li{
+                        grid-template-columns: 2fr 0fr 0fr;
+                        p{
+                            display: none;
+                        }
+                    }
+                }
+                .profileContent_edit{
+                    display: block;
+                    position: relative;
+                    form{
+                        input{
+                            box-shadow: 0 0 3px gray;
+                            border-radius: 5px;
+                            font-size: 15px;
+                            margin-bottom: 5px;
+                            display: block;
+                            background-color: var(--secondary-color);
+                        }
+                        .submit{
+                            position: absolute;
+                            right: 0;
+                            top: 100%;
+                            width: 100px;
+                            input{
+                                cursor: pointer;
+                                transition: .5s;
+                                &:hover{
+                                    color: var(--secondary-color);
+                                    background-color: var(--primary-color);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Profile head end ________/
+
+        // Customer Address ______
+        .c_address{
+            visibility: visible;
+            opacity: 1;
+            position: static;
+            transform: translate(0,0);
+            z-index: 0;
+            .cAddress_data{
+                background-color: #ffffff3f;
+                box-shadow: 0 0 4px #fff;
+            }
+        }
+        // Customer Address end ______/
+
+        // profile order __________
+        .profile_order{
+            padding: 0 15px;
+            width: 100%;
+            position: relative;
+
+            .btn_left,.btn_right{
+                position: absolute;
+                top: 50%;
+                display: none;
+                i{
+                    @include icon(45px, 45px, 45px);
+                    opacity: .5;
+                    transition: .5s;
+                    &:hover{
+                        border-radius: 50%;
+                        opacity: 1;
+                    }
+                }
+            }
+            .btn_left{
+                left: 0;
+            }
+
+            .profileOrder_data{
+                height: 285px;
+                overflow-x: scroll;
+                overflow-y: auto;
+                @include scrolls();
+
+                
+                .btn_right{
+                    right: 0;
+                }
+                ul{ 
+                    padding: 3px;
+                    height: 250px;
+                    overflow-y: scroll;
+                    @include scrolls();
+                    li{
+                        @include gridLi(.3fr 1fr 1fr 1fr 1fr 2fr 3fr);
+
+                        // background-color: transparent;
+                        // position: relative;
+                        // z-index: 1;
+                        // &::after{
+                        //     position: absolute;
+                        //     content: '';
+                        //     top: 0;
+                        //     left: 0;
+                        //     width: 100%;
+                        //     height: 100%;
+                        //     background-color: #5e5e5e28;
+                        //     filter: blur(4px);
+                        //     z-index: -1;
+                        // }
+                        small+small{
+                            border-left: 1px solid #24242470;
+                            padding: 0 2px;
+                            @include clamp(2);
+                        }
+                    }
+                }
+                ol{
+                    padding: 3px;
+                    li{
+                        @include gridLi(.3fr 1fr 1fr 1fr 1fr 2fr 3fr);
+                        margin-bottom: 0;
+                        h6{
+                            color: var(--primary-color);
+                            font-weight: var(--font-semi-bold);
+                            letter-spacing: .8px;
+                        }
+                    }
+                }
+            }
+            form{
+                .search_order{
+                    margin-top: 10px;
+                    background-color: #ffffff3f;
+                    box-shadow: 0 0 3px 1px #ffffff;
+                    border-radius: 25px;
+                    max-width: 300px;
+                    @include flex(center,flex-start,5px);
+                    padding: 2px 8px;
+                    overflow: hidden;
+                    input{
+                        font-size: 16px;
+                        color: var(--text-color);
+                        background-color: transparent;
+                    }
+                }
+            }
+            i{
+                background-color: var(--secondary-color);
+            }
+        }
+        // profile order end __________/
+
+        // profile favauritr __________
+        .profile_favauritr{
+            .profileOrder_data{
+                ol{
+                    li{
+                        @include gridLi(1fr 3fr 1.5fr 1fr 1fr);
+                    }
+                }
+                ul{
+                    height: 240px;
+                    li{
+                        @include gridLi(1fr 3fr 1.5fr 1fr 1fr);
+                        align-items: center;
+                        .addPd_img{
+                            img{
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        small{
+                            @include clamp(3);
+                        }
+                    }
+                }
+            }
+        }
+        // profile favauritr __________/
+
+        // profile Reviews __________
+        .profile_review{
+            .profileOrder_data{
+                ol{
+                    li{
+                        @include gridLi( 0.5fr 0.5fr 2fr 2fr 1.5fr 1fr);
+                        align-items: center;
+                    }
+                }
+                ul{
+                    li{
+                        @include gridLi( 0.5fr 0.5fr 2fr 2fr 1.5fr 1fr);
+                        align-items: center;
+                        gap: 5px;
+                        small{
+                            @include clamp(2);
+                        }
+                    }
+                }
+            }
+        }
+        // profile Reviews end __________/
+    }
+}
+// _______________ Profile end ______________
+@media screen and (max-width: 768px) {
+    // .profile_area {
+    //     .view_product {
+    //         position: absolute;
+    //         left: -50%;
+    //         opacity: 0;
+    //         transition: 0.5s;
+    //     }
+    //     .main_frame {
+    //         width: 100%;
+    //     }
+    // }
+    // .profile_area.active .view_product {
+    //     position: absolute;
+    //     opacity: 1;
+    //     left: 0;
+    //     z-index: 1;
+    // }
+    .profile{
+        .profile_menu{
+            ul{
+                gap: 5px;
+                li{
+                    p{
+                        padding: 5px 8px;
+                    }
+                }
+                
+            }
+        }
+        .user_profile{
+            // height: 100%;
+            .profile_order{
+                .btn_left,.btn_right{
+                    display: block;
+                }
+                .profileOrder_data{
+                    ul{
+                        width: 700px;
+                    }
+                    ol{
+                        width: 700px;
+                    }
+                }
+            }
+            #userProfile{
+                height: 100%;
+            }
+        } 
+    } 
+}
+@media screen and (max-width: 576px) {
+    .profile{
+        .profile_menu{
+            // margin-top: 3px;
+            ul{
+                li{
+                    border: none;
+                    &:hover{
+                        box-shadow: 0 2px 4px transparent;
+                    }
+                    p{
+                        display: none;
+                    }
+                    span{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .profile_head {
+            flex-direction: column;
+            justify-content: flex-start !important;
+            .profile_img{
+                min-height: 220px;
+            }
+        }
+    }
+}

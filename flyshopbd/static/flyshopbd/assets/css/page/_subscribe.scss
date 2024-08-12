@@ -1,0 +1,25 @@
+.subscribe{
+    background-color: var(--secondary-color);
+    padding: 10px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    .subscribe_input{
+        @include flex(center ,space-around, 5px);
+        border: 1px solid var(--primary-color);
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 3px 3px 3px 10px;
+        border-radius: 25px;
+        input{
+            font-size: 18px;
+        }
+        input[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            width: 150px;
+            padding: 8px 0;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+}

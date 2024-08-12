@@ -1,0 +1,119 @@
+{% load static %} 
+    <div class="c_address checkout">
+        <div class="cAddress_data">
+            <div class="logo"><img src="{% static 'flyshopbd/assets/image/logo.png' %}" alt=""></div>
+            <div class="add_product">
+                <h5>Item <span>5</span></h5>
+                <div class="close_cAddress">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <ul>
+                    <li>
+                        <div class="addPd_img">
+                            <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                        </div>
+                        <div class="addPd_data">
+                            <h6>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="addPd_img">
+                            <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                        </div>
+                        <div class="addPd_data">
+                            <h6>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h5>Delivery Address</h5>
+            <form action="#" method="post">
+                <ul>
+                    <li>
+                        <label for="C_name">Full Name</label>
+                        <input type="text" id="C_name" placeholder="Enter Your Name" required>
+                    </li>
+                    <li>
+                        <label for="C_phone">Phone</label>
+                        <input type="tel" id="C_phone" placeholder="Enter Your Phone" required>
+                    </li>
+                    <li>
+                        <label for="C_alternativephone">Alternative Phone</label>
+                        <input type="tel" id="C_alternativephone" placeholder="Optional Phone">
+                    </li>
+                    <li>
+                        <label for="C_division">Division</label>
+                        <select id="C_division" name="division" required>
+                            <option value="" selected>Select</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Borishal">Borishal</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="C_District">District</label>
+                        <select id="C_District" name="district" required>
+                            <option value="" selected>Select</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Borishal">Borishal</option>
+                        </select>
+                    </li>
+                    <li>
+                    <label for="C_thana">Thana</label>
+                        <select id="C_thana" name="thana" required>
+                            <option value="" selected>Select</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Borishal">Borishal</option>
+                        </select> 
+                    </li>
+                    <li>
+                        <label for="C_address">Address</label>
+                        <input type="text" id="C_address" placeholder="House No / Building / Street" required>
+                    </li>
+                    <li>
+                    <label for="C_payment">Payment Method</label>
+                        <select id="C_payment" name="payment" required>
+                            <option value="" selected>Select</option>
+                            <option value="bkash">Bkash</option>
+                        </select> 
+                    </li>
+                    <li>
+                        <!-- <label for="C_home">HOME</label>
+                        <input type="radio" name="home" id="C_home" required> 
+                        <label for="C_office">OFFICE</label>
+                        <input type="radio" name="home" id="C_office" required> -->
+                    </li>
+                </ul>
+                <input style="display: none;" type="submit" value="Done" id="done">
+                <div class="form_group">
+                    <input type="checkbox" name="C_checkbox" id="C_checkbox" required>
+                    <label for="C_checkbox">
+                        <small>I agree to the <a href="#">terms and conditions</a></small>
+                    </label>
+                </div>
+            </form>
+            <!-- <h5>Memo</h5> -->
+            <div class="memo">
+                <ol>
+                    <li><p>Data-time</p> : <span>04/05/2023;10:30pm</span></li>
+                    <!-- <li><p>Item</p> : <span>04</span></li> -->
+                    <li><p>SubTotal :</p> <span>3300৳</span></li>
+                    <li><p>Delivery Charge :</p> <span>00৳</span></li>
+                    <li><p>Total :</p> <span>3300৳</span></li>
+                    <li title="advance"><p>Advance pay :</p> <span>300৳</span></li>
+                    <li><p>pay on delivary :</p> <span><span>3000</span>৳</span></li>
+                </ol>
+            </div>
+            <!-- <button>Done</button> -->
+            <div class="submit">
+                <label for="done" type="submit">PAYMENT</label>
+            </div>
+        </div>
+    </div>

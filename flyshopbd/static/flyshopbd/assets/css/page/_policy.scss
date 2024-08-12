@@ -1,0 +1,52 @@
+.policy_area{
+    display: block !important;
+    .policy {
+        max-width: 900px !important;
+        margin: 0 auto;
+        .policy_item{
+            ul {
+                width: 100%;
+                li {
+                    background-color: #ffffffef;
+                    margin-bottom: 5px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    display: flex;
+                    gap: 10px;
+                    span{
+                        float: left;
+                        i{
+                            @include icon(45px, 45px, 45px);
+                            border-radius: 0px 20px 20px 20px;
+                            font-size: 35px;
+                            color: var(--secondary-color);
+                            background: linear-gradient(120deg, #0c81ff, #ffffffc9);
+                        }
+                    }
+                    q{
+                        color: var(--primary-color);
+                    }
+                    details{
+                        cursor: pointer;
+                    }
+                }
+                dl{
+                    dt{
+                        font-size: 15px;
+                        color: #000;
+                        display: flex;
+                        margin-bottom: 8px;
+                        i{
+                            box-shadow: 0 0 0px transparent;
+                            font-size: 14px;
+                            height: 0;
+                            width: 0;
+                            line-height: 20px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

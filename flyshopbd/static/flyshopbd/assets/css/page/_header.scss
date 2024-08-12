@@ -1,0 +1,227 @@
+// __________________ Header Area Start ______________________
+header {
+    background-color: var(--secondary-color);
+    nav{
+        @include flex(center,space-between,10px);
+        height: 55px;
+        .nav_logo{
+            img{
+                min-width: 130px;
+            }
+        }
+        .search{
+            @include flex(center,flex-start, 10px);
+            width: 60%;
+            margin: 0 auto;
+            form{
+                width: 100%;
+                .search_bar{
+                    @include flex(center, space-between, 0px);
+                    border: 1px solid gray;
+                    width: 100%;
+                    border-radius: 20px;
+                    transition: .5s;
+                    position: relative;
+                    &:hover{
+                        background-color: var(--body-color);
+                    }
+                    input{
+                        font-size: 18px;
+                        padding-left: 15px;
+                        border-radius: 20px;
+                    }
+                    i{
+                        @include icon(40px, 40px, 40px);
+                        background-color: var(--secondary-color);
+                        &:hover{
+                            border-radius: 5px 50% 50% 5px;
+                        }
+                    }
+                    .suggestion_bar{
+                        position: absolute;
+                        width: 100%;
+                        height: 290px;
+                        left: 50%;
+                        top: calc(100% + 7px);
+                        z-index: var(--z-1);
+                        z-index: 4;
+                        transform: translate(-50%);
+                        padding: 0 5px;
+                        overflow-y: scroll;
+                        @include scrolls();
+
+                        // display: none;
+
+                        li{
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            margin-bottom: 1px;
+                            cursor: pointer;
+                            padding: 5px 10px;
+                            background-color: var(--secondary-color);
+                            @include radius(5px, var(--body-color-light));
+                            &:hover {
+                                color: var(--primary-color);
+                            }
+                            img{
+                                width: 60px;
+                                height: 60px;
+                            }
+                            p{
+                                font-weight: var(--font-medium);
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .tab_bar{
+            // .nav_menu{
+            //     display: none;
+            //     i{
+            //         @include icon(35px, 35px, 35px);
+            //     }
+            // }
+            ul{
+                @include flex(center, end, 8px);
+                // li{
+                //     span{
+                //         display: none;
+                //     }
+                // }
+                .card_add{
+                    position: relative;
+                    .card_count{
+                        position: absolute;
+                        right: 0;
+                        bottom: 70%;
+                        color: red; 
+                    }
+                }
+            }
+        }
+    }
+}
+// __________________ Header Area End _______________________
+
+// ___ Responsive max-width _______________________
+@media screen and (max-width: 768px) {
+    // ___ header ___________
+    header {
+        nav{
+            // position: relative;
+            .search{
+                form{
+                    .search_bar{
+                        // position: static;
+                        .suggestion_bar{
+                            max-width: 450px;
+                            li{
+                                p{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // tap bar
+            .tab_bar{
+                position: relative;
+                transition: .5s;
+                &:hover .shopping{
+                    visibility: visible;
+                    opacity: 1;
+                    top: 100%;
+                }
+                .nav_menu{
+                    display: block;
+                }
+                // .shopping{
+                    // position: absolute;
+                    // width: 160px;
+                    // right: 0;
+                    // top: 80%;
+
+                    // flex-direction: column;
+                    // gap: 3px;
+                    // background-color: var(--secondary-color);
+                    // @include radius(5px, var(--body-color-light));
+
+                    // opacity: 0;
+                    // visibility: hidden;
+                    // li{
+                    //     @include flex(center, start, 5px);
+                    //     border-radius: 5px;
+                    //     padding: 3px 10px 3px 5px;
+                    //     cursor: pointer;
+                    //     transition: .5s;
+                    //     &:hover{
+                    //         box-shadow: 0 0 4px var(--body-color-light);
+                    //     }
+                    //     span{
+                    //         display: block;
+                    //     }
+                    // }
+                // }
+            }
+        }
+    }
+}
+// ______ Responsive max-width _______________________
+@media screen and (max-width: 576px) {
+    header {
+        nav{
+            gap: 5px;
+            position: relative;
+            .search{
+                form{
+                    .search_bar{
+                        position: absolute;
+                        width: 0%;
+                        right: 112px;
+                        top: 50%;
+                        transform: translate(0,-50%);
+                        justify-content: flex-end;
+                        border: none;
+                        z-index: 1;
+                        input{
+                            display: none
+                        }
+                        i{
+                            @include icon(35px, 35px, 35px);
+                        }
+                    }
+                }
+            }
+            .active{
+                .search_bar{
+                    background-color: #f3f3f38c !important;
+                    width: 100% !important;
+                    right: 0 !important;
+                    border: 1px solid gray !important;
+                    input{
+                        display: block !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media screen and (max-width: 425px) {
+//     header{
+//         nav{
+//             .nav_logo{
+//                 img {
+//                     min-width: 130px;
+//                 }
+//             }
+//         } 
+//     } 
+// }

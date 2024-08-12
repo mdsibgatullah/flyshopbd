@@ -1,0 +1,58 @@
+.logos {
+    overflow: hidden;
+    padding: 10px 0;
+    background-color: #fff;
+    white-space: nowrap;
+    margin: 3px 0;
+    position: relative;
+    &:hover .logos_slider {
+        animation-play-state: paused;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        width: 150px;
+        height: 100%;
+        background: linear-gradient(81deg, var(--body-color), #ffffffd7,#ffffff00);
+        left: 0;
+        top: 0;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        width: 150px;
+        height: 100%;
+        background: linear-gradient(81deg,#ffffff00, #ffffffd7, var(--body-color));
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+    .logos_slider{
+        overflow: hidden;
+        display: inline-block;
+        animation: slides 20s linear infinite;
+        img{
+            height: 35px;
+            padding: 0 15px;
+        }
+    }
+}
+
+@keyframes slides{
+    from{ transform: translateX(0);}
+    to{ transform: translateX(-100%);}
+}
+@media screen and (max-width: 768px) {
+    .logos{
+        .logos_slider{
+            animation: slides 15s linear infinite;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .logos{
+        .logos_slider{
+            animation: slides 5s linear infinite;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{% load static %}
+<div>
+    <div class="view_menu">
+        <div class="view_product">
+            <ul>
+                <li><i class="fa-solid fa-camera-retro"></i></li>
+                <li class="dropdown">
+                    <i class="fa-solid fa-desktop"></i>
+                    <ul>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-laptop"></i></li>
+                <li class="dropdown">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <ul>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li class="cetagory_type"><h5>Laptop Catagory</h5></li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                        <li>Aussos</li>
+                        <li>Apple</li>
+                        <li>Dell</li>
+                    </ul>
+                </li>
+                <li><i class="fa-regular fa-clock"></i></li>
+            </ul>
+        </div>
+        <div class="main_frame">
+            <ul class="all_cetagory">
+                <li class="show_catagory">
+                    <i class="fa-solid fa-bars"></i>
+                </li>
+                <li>Iphone</li>
+                <li>smart watch</li>
+                <li>laptop</li>
+                <li>camera</li>
+                <li>phone</li>
+                <li>Ram</li>
+                <li>ssd</li>
+                <li>camera</li>
+                <li>phone</li>
+                <li>Ram</li>
+                <li>ssd</li>
+                <li>camera</li>
+                <li>phone</li>
+                <li>Ram</li>
+                <li>ssd</li>
+            </ul>
+            <!-- :::::::::::: Sections Area Start ::::::::::::: -->
+            <div class="sections">
+
+                <!-- :::::::::::: Main Area Start ::::::::::::: -->
+                <!-- <main> -->
+                    <!-- :::::::::::::::: slider area :::::::::::::::::: -->
+                    {% include "flyshopbd/slider.html" %}
+                    <!-- :::::::::::::::: slider area end :::::::::::::::::: -->
+
+                    <!-- :::::::::::::::: All Product :::::::::::::::::: -->
+                    {% include "flyshopbd/all-product.html" %}
+                <!-- </main> -->
+                <!-- :::::::::::: Main Area End ::::::::::::: -->
+
+                <!-- :::::::::::: logos Slider Start ::::::::::::: -->
+                {% include "flyshopbd/logo-slider.html" %}
+                <!-- :::::::::::: logo Slider End ::::::::::::: -->
+                <!-- :::::::::::: Main Area End ::::::::::::: -->
+
+                <!-- :::::::::::: support Start ::::::::::::: -->
+                <div class="support">
+                    <ul class="support_item">
+                        <li>
+                            <img src="{% static 'flyshopbd/assets/image/svg_support.png' %}" alt="">
+                            <h4>SUPPORT 24/7</h4>
+                        </li>
+                        <li>
+                            <img src="{% static 'flyshopbd/assets/image/svg_pay.png' %}" alt="">
+                            <h4>Online Payment</h4>
+                        </li>
+                        <li>
+                            <img src="{% static 'flyshopbd/assets/image/svg_product.png' %}" alt="">
+                            <h4>Authentic Product</h4>
+                        </li>
+                        <li>
+                            <img src="{% static 'flyshopbd/assets/image/svg_delivary.png' %}" alt="">
+                            <h4>Fast/Free Delivery</h4>
+                        </li>
+                    </ul>
+                </div>
+                <!-- :::::::::::: sopport End ::::::::::::: -->
+                
+                <!-- :::::::::::: Subscrib Start ::::::::::::: -->
+                {% include "flyshopbd/subscribe.html" %}
+                <!-- :::::::::::: Subscrib End ::::::::::::: -->
+
+                <!-- :::::::::::: Footer Area Start ::::::::::::: -->
+                {% include "flyshopbd/footer.html" %}
+                <!-- :::::::::::: Footer Area End ::::::::::::: -->
+            </div>
+            <!-- :::::::::::: Sections Area End ::::::::::::: -->
+        </div>
+    </div>
+</div>

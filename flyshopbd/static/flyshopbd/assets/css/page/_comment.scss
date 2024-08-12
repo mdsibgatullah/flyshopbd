@@ -1,0 +1,144 @@
+// // User comment area 
+// .commentPd{
+//     position: fixed;
+//     width: 300px;
+//     top: 60%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+//     z-index: 5;
+//     background-color: var(--secondary-color);
+//     padding: 5px 10px;
+//     border-radius: 5px;
+
+    
+//     visibility: hidden;
+//     opacity: 0;
+//     transition: .3s;
+//     .comment_head{
+//         @include flex(center,space-between,5px);
+//         margin-bottom: 5px;
+//         .comment_img{
+//             img{
+//                 width: 120px;
+//             }
+//         }
+//         // .comment_close{
+//         //     i{
+//         //         color: var(--danger-color);
+//         //     }
+//         // }
+//         .comment_product{
+//             min-width: 70px;
+//             // min-height: 50px;
+//             img{
+//                 width: 70px
+//                 // height: 100%;
+//             }
+//         }
+//         h6{
+//             @include clamp(2);
+//         }
+//     }
+//     form{
+//         position: relative;
+//         textarea{
+//             width: 100%;
+//             outline: none;
+//             border: 1px solid var(--body-color);
+//             border-radius: 5px;
+//             padding: 5px;
+//             font-size: 16px;
+//             background-color: transparent;
+//             transition: .3s;
+//             // margin-bottom: 5px;
+//             position: relative;
+//             &:hover{
+//                 box-shadow: 2px 2px 2px #c5c5c5;
+//             }
+//         }
+//         input[type='submit']{
+//             position: absolute;
+//             width: 60px;
+//             bottom: 5px;
+//             right: 0px;
+//             padding: 8px 0px;
+//             border: 1px solid #e6e6e6;
+//             background-color: var(--secondary-color);
+//             cursor: pointer;
+//             transition: .3s;
+//             font-weight: var(--font-bold);
+//             border-radius: 5px;
+//             box-shadow: -2px -2px 4px 0px #6d6d6d inset;
+//             &:hover{
+//                 color: var(--primary-color);
+//             }
+//         }
+//     }
+// }
+// .commentPd.active{
+//     visibility: visible;
+//     opacity: 1;
+//     top: 50%;
+// }
+// // User Comment Area End
+// @media screen and (max-width: 576px) {
+//     .commentPd{
+//         width: 250px;
+//     }
+// }
+
+// User Chat Start
+.chat{
+    position: fixed;
+    right: 7px;
+    bottom: 30px;
+    z-index: 1;
+    button{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        padding: 0;
+        border: 1px solid var(--primary-color);
+        // color: var(--primary-color);
+    }
+}
+
+// User comment area 
+.commentPd{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+
+    
+    transition: .6s;
+    width: 0px;
+    overflow: hidden;
+    form{
+        position: relative;
+        textarea{
+            width: 100%;
+            outline: none;
+            border: 1px solid #9b9b9b;
+            border-radius: 5px;
+            background-color: transparent;
+            transition: .3s;
+            // box-shadow: 2px 2px 3px #c5c5c5;
+            @include scrolls();
+        }
+        input[type='submit']{
+            position: absolute;
+            width: 50px;
+            bottom: 5px;
+            right: 1px;
+            padding: 6px 0px;
+            border: 1px solid #e6e6e6;
+            background-color: var(--secondary-color);
+            cursor: pointer;
+            font-weight: var(--font-bold);
+            border-radius: 5px;
+            box-shadow: -2px -2px 4px 0px #858585 inset;
+        }
+    }
+}

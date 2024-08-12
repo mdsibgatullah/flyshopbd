@@ -1,0 +1,37 @@
+/* __________________ Variable Root __________________ */
+:root {
+    /* ---------- Colors ---------- */
+    --primary-color: #0c81ff;
+    --secondary-color: #f8f8f8;
+    --text-color: #141414;
+    // --body-color: #D0DBE3;
+    --body-color: #e6e6e6;
+    --body-color-light: #adadad;
+    --danger-color: red;
+
+    /* ---------- Font Weight ---------- */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* ------------- Font Family --------------- */
+    --family-primary: 'Lexend', sans-serif;
+    --family-secondary: 'Barlow', sans-serif;
+    --family-openSans: 'Open Sans', sans-serif;
+
+
+    /* ---------- Margin/padding ---------- */
+    --mp-1: .5rem;
+    --mp-2: 1rem;
+    --mp-3: 1.5rem;
+    --mp-4: 2rem;
+    --mp-5: 2.5rem;
+    --mp-6: 3rem;
+
+    /* ---------- z-index ---------- */
+    --z-1: 1;
+    --z-2: 2;
+    --z-3: 3;
+    --z-fixed: 100;
+}

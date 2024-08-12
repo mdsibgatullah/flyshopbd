@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Home | Page</title>
+{% endblock title %}
+
+
+{% block content %}
+
+    <!-- :::::::::::: Header Area Start ::::::::::::: -->
+     {% include "flyshopbd/header.html" %}
+    <!-- :::::::::::: Header Area End ::::::::::::: -->
+
+    <!-- ::::: card added product ::::: -->
+    {% include "flyshopbd/add-product.html" %}
+    <!-- ::::: card added product end ::::: -->
+
+    <!-- ::::: Product Details (Singla product) Start ::::: -->
+    {% include "flyshopbd/product-area.html" %}
+    <!-- ::::: Product Details End ::::: -->
+
+    <!-- ::::: CheckOut ::::: -->
+    {% include "flyshopbd/checkout.html" %}
+    <!-- ::::::::::::: CheckOut End ::::::::::::: -->
+
+    <!--::::: view_menu start::::: -->
+    {% include "flyshopbd/view-menu.html" %}
+    <!--::::: view_menu end::::: -->
+    
+    <!--::::: overlay::::: -->
+    {% include "flyshopbd/overlay.html" %}
+    <!--::::: overlay end::::: -->
+
+    <!--::::: comment start::::: -->
+    {% include "flyshopbd/chat.html" %}
+    <!--::::: comment end::::: -->
+
+
+{% endblock content %}

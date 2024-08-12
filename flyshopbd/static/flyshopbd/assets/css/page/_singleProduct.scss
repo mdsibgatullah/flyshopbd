@@ -1,0 +1,41 @@
+/* :::::::::::::::::::::::: Single Product Area Start ::::::::::::::::::::::::*/
+.product_wraper {
+    overflow-y: scroll;
+    height: calc(100vh - 62px);
+    margin: 3px;
+    @include scrolls();
+}
+.single_product{
+    background-color: var(--secondary-color);
+    .product_area{
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        min-height: auto;
+        max-width: 100%;
+        height: 100%;
+        transform: translate(0,0);
+        border-radius: 0;
+        box-shadow: 0 0 2px transparent;
+        .pd_dtl{
+            overflow: visible;
+            .pdDtl_data{
+                min-height: auto;
+                .pdDtl_img{
+                    width: 100%;
+                }
+            }
+        }
+        .pdDtl_more {
+            display: block;
+        }
+        .pdDtl_contant{
+            .pdDtl_btn{
+                margin-bottom: 0;
+            }
+            p{
+                max-width: 500px;
+            }
+        }
+    }
+}

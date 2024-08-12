@@ -1,0 +1,487 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Profile | Page</title>
+{% endblock title %}
+
+
+{% block content %}
+
+    <!-- :::::::::::: Header Area Start ::::::::::::: -->
+    {% include "flyshopbd/header.html" %}
+    <!-- :::::::::::: Header Area End ::::::::::::: -->
+    <!-- ::::: card added product ::::: -->
+    {% include "flyshopbd/add-product.html" %}
+    <!-- ::::: card added product end ::::: -->
+
+    <!-- ::::: customer address  ::::: -->
+    {% comment %} {% include "flyshopbd/customer-address.html" %} {% endcomment %}
+    <!-- ::::: customer end ::::: -->
+
+    <!-- ::::: CheckOut ::::: -->
+    {% include "flyshopbd/checkout.html" %}
+    <!-- ::::::::::::: CheckOut End ::::::::::::: -->
+
+    <!--::::: overlay::::: -->
+    <div class="overlay" onclick="overlay()"></div>
+    <!--::::: overlay end::::: -->
+
+    <div class="profile">
+        <!-- profile menu -->
+        <div class="profile_menu">
+            <ul>
+                <li class="pMenu_Profile active"><p>Profile</p><span><i class="fa-regular fa-user"></i></span></li>
+                <li class="pMenu_Address"><p>Address</p><span><i class="fa-regular fa-address-card"></i></span></li>
+                <li class="pMenu_Order"><p>Orders</p><span><i class="fa-brands fa-shopify"></i></span></li>
+                <li class="pMenu_Track"><p>Tracker</p><span><i class="fa-solid fa-truck-fast"></i></span></li>
+                <li class="pMenu_Favourite"><p>Favourite</p><span><i class="fa-regular fa-heart"></i></span></li>
+                <li class="pMenu_Review"><p>Reviews</p><span><i class="fa-solid fa-star-half-stroke"></i></span></li>
+                <li class="pMenu_logout">Logout</li>
+            </ul>
+        </div>
+        <!-- user profile -->
+        <div class="user_profile">
+            
+            <!-- ::::::::::::::::::::::: profile head ::::::::::::::::::::::: -->
+            <section id="userProfile">
+                <div class="profile_head">
+                    <div class="profile_img">
+                        <img src="{% static 'flyshopbd/assets/image/Sibgatullah.jpg' %}" alt="UserImg">
+                        <div class="profileImg_edit">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </div>
+                    </div>
+                    <div class="profileText_area">
+                        <ul>
+                            <li class="profile_edit">
+                                <div class="openProfile_edit" onclick="openProfileEdit()">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </div>
+                                <div class="closeProfile_edit" onclick="closeProfileEdit()">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </li>
+                            <li><h5>Name</h5> <b>:</b> <p>Munna</p></li>
+                            <li><h5>Email</h5> <b>:</b> <p>msmmunna8@gmail.com</p></li>
+                            <li><h5>Mobile</h5> <b>:</b> <p>01706558982</p></li>
+                            <li><h5>BirthDay</h5> <b>:</b> <p>00/00/0000</p></li>
+                            <li><h5>Gender</h5> <b>:</b> <p>Male</p></li>
+                            <li><h5>Verified</h5> <b>:</b> <p>Done</p></li>
+                        </ul>
+                        <div class="profileContent_edit">
+                            <form action="#" method="post">
+                                <input type="text" placeholder="Name">
+                                <input type="email" placeholder="Emai">
+                                <input type="tel" placeholder="Mobile">
+                                <input type="date">
+                                <input type="text" placeholder="Male/female">
+                                <input type="number" placeholder="Varifyd Code">
+                                <div class="submit">
+                                    <input type="submit" value="Save">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ::::::::::::::::::::::: customer address ::::::::::::::::::::::: -->
+            <section class="c_address" id="userAddress">
+                <div class="cAddress_data">
+                    <h4>Address</h4>
+                    <form action="#" method="post">
+                        <ul>
+                            <li>
+                                <label for="nameAC">Full Name<span>*</span></label>
+                                <input type="text" id="nameAC" placeholder="Enter Your Name" required>
+                            </li>
+                            <li>
+                                <label for="phoneAC">Phone<span>*</span></label>
+                                <input type="tel" id="phoneAC" placeholder="Enter Your Phone" required>
+                            </li>
+                            <li>
+                                <label for="alternativephoneAC">Alternative Phone</label>
+                                <input type="tel" id="alternativephoneAC" placeholder="Optional Phone">
+                            </li>
+                            <li>
+                                <label for="emailAC">Email</label>
+                                <input type="email" id="emailAC" placeholder="Enter Your Email">
+                            </li>
+                            <li>
+                                <label for="divisionAC">Division<span>*</span></label>
+                                <select id="divisionAC" name="division" required>
+                                    <option value="" selected>Select</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Borishal">Borishal</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="DistrictAC">District<span>*</span></label>
+                                <select id="DistrictAC" name="district" required>
+                                    <option value="" selected>Select</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Borishal">Borishal</option>
+                                </select>
+                            </li>
+                            <li>
+                            <label for="thanaAC">Thana<span>*</span></label>
+                                <select id="thanaAC" name="thana" required>
+                                    <option value="" selected>Select</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Borishal">Borishal</option>
+                                </select> 
+                            </li>
+                            <li>
+                                <label for="addressAC">Address<span>*</span></label>
+                                <input type="text" id="addressAC" placeholder="House No / Building / Street" required>
+                            </li>
+                            <li>
+                                <label for="homeAC">HOME</label>
+                                <input type="radio" name="home" id="homeAC"> 
+                                <label for="officeAC">OFFICE</label>
+                                <input type="radio" name="home" id="officeAC">
+                            </li>
+                            <li class="submit">
+                                <input type="submit" value="Submit">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ::::::::::::::::::::::: Order ::::::::::::::::::::::: -->
+            <section class="profile_order" id="userOrder">
+                <div class="profileOrder_data">
+                    <div class="btn_left">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </div>
+                    <div class="btn_right">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </div>
+                    <ol>
+                        <li>
+                            <h6>No</h6>
+                            <h6>ID</h6>
+                            <h6>Name</h6>
+                            <h6>Taka</h6>
+                            <h6>Phone</h6>
+                            <h6>Email</h6>
+                            <h6>Product</h6>
+                        </li>
+                    </ol>
+                    <ul>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <small>#344dd</small>
+                            <small>Munna</small>
+                            <small>10000</small>
+                            <small>4474121345</small>
+                            <small>lkasdlfklsk@gmail.com</small>
+                            <small>Lorem ipsum dolor sit amet consectetur.</small>
+                        </li>
+                    </ul>
+                </div>
+                <form action="#" method="post">
+                    <div class="search_order">
+                        <input type="search" placeholder="Search for Product ID">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ::::::::::::::::::::::: Favourite ::::::::::::::::::::::: -->
+            <section class="profile_order profile_favauritr" id="userFavourite">
+                <div class="profileOrder_data">
+                    <ol>
+                        <li>
+                            <h6>Image</h6>
+                            <h6>Name</h6>
+                            <h6>Price</h6>
+                            <h6>Cart</h6>
+                            <h6>Delete</h6>
+                        </li>
+                    </ol>
+                    <ul>
+                        <li>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>6800tk</small>
+                            <div class="card">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <form action="#" method="post">
+                    <div class="search_order">
+                        <input type="search" placeholder="Search for Product ID">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- ::::::::::::::::::::::: Reviews ::::::::::::::::::::::: -->
+            <section class="profile_order profile_favauritr profile_review" id="userReview">
+                <div class="profileOrder_data">
+                    <ol>
+                        <li>
+                            <h6>No</h6>
+                            <h6>Image</h6>
+                            <h6>Name</h6>
+                            <h6>Comment</h6>
+                            <h6>Date</h6>
+                            <h6>Delete</h6>
+                        </li>
+                    </ol>
+                    <ul>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <small>01</small>
+                            <div class="addPd_img">
+                                <img src="{% static 'flyshopbd/assets/image/phone-1.png' %}" alt="product">
+                            </div>
+                            <small>
+                                3M GoldPrivacy Filter for 17" 
+                                Widescreen Laptop (16:10) (GF170W1B)
+                                Widescreen Laptop (16:10) (GF170W1B)
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, dicta.
+                            </small>
+                            <small>
+                                03/03/2003
+                            </small>
+                            <div class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <form action="#" method="post">
+                    <div class="search_order">
+                        <input type="search" placeholder="Search for Product ID">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- :::::::::::: js :::::::::::: -->
+    <script src="{% static 'flyshopbd/assets/js/custom.js' %}"></script>
+    <script src="{% static 'flyshopbd/assets/js/section/header.js' %}"></script>
+    <script src="{% static 'flyshopbd/assets/js/page/profile.js' %}"></script>
+
+{% endblock content %}
